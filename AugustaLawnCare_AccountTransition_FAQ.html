@@ -1,0 +1,282 @@
+<!-- Augusta Lawn Care | Account Transition FAQ (embeddable) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+<style>
+  .mhc-faq {
+    /* dark mode only */
+    --dark:   #f4f0ec;
+    --red:    #ffc614;
+    --cream:  #232019;
+    --cream2: #2b2721;
+    --cream3: #3a352c;
+    --muted:  #a89a8e;
+    --light:  #1a1815;
+
+    --bg:        var(--light);
+    --surface:   var(--cream2);
+    --surface-2: var(--cream);
+    --border:    var(--cream3);
+    --text:      var(--dark);
+    --text-sub:  var(--muted);
+
+    --sans:   'DM Sans', system-ui, sans-serif;
+    --radius: 12px;
+    --max: 680px;
+    color-scheme: dark;
+  }
+
+  .mhc-faq, .mhc-faq * { box-sizing: border-box; }
+  .mhc-faq {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.72;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 36px 20px 20px;
+    border-radius: var(--radius);
+  }
+
+  .mhc-faq .icon { color: var(--muted); flex-shrink: 0; }
+  .mhc-faq .icon.accent { color: var(--red); }
+
+  /* intro */
+  .mhc-faq .faq-intro { margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1.5px solid var(--border); }
+  .mhc-faq .faq-title {
+    font-family: var(--sans);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    font-size: clamp(28px, 7vw, 40px);
+    line-height: 1.15;
+    color: var(--text);
+    margin: 0 0 10px;
+  }
+  .mhc-faq .faq-lead {
+    color: var(--text-sub);
+    max-width: 680px;
+    margin: 0;
+  }
+
+  /* accordion items */
+  .mhc-faq .faq-list { display: flex; flex-direction: column; gap: 10px; }
+  .mhc-faq details {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .mhc-faq details:hover { border-color: var(--muted); }
+  .mhc-faq details[open] { border-color: var(--red); }
+  .mhc-faq summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--text);
+    border-radius: var(--radius);
+  }
+  .mhc-faq summary::-webkit-details-marker { display: none; }
+  .mhc-faq summary:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+  .mhc-faq summary .q-icon { color: var(--red); }
+  .mhc-faq summary .q-text { flex: 1; }
+  .mhc-faq summary .chev { transition: transform 0.2s ease; }
+  .mhc-faq details[open] summary .chev { transform: rotate(180deg); color: var(--red); }
+
+  .mhc-faq .answer {
+    padding: 0 16px 16px 48px;
+    color: var(--text);
+  }
+  .mhc-faq .answer p { margin: 0 0 10px; }
+  .mhc-faq .answer p:last-child { margin-bottom: 0; }
+
+  /* chips */
+  .mhc-faq .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .mhc-faq .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  .mhc-faq .chip-more { background: none; border-style: dashed; color: var(--text-sub); }
+  .mhc-faq .chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); }
+
+  @media (max-width: 480px) {
+    .mhc-faq .answer { padding-left: 16px; }
+  }
+
+  /* platform rows */
+  .mhc-faq .plats { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+  .mhc-faq .plat {
+    display: grid; grid-template-columns: 170px 1fr; gap: 12px; align-items: start;
+    background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--red);
+    border-radius: 8px; padding: 10px 12px; font-size: 14px; line-height: 1.55;
+  }
+  .mhc-faq .plat-name { font-weight: 600; }
+  .mhc-faq .plat-body { color: var(--text); }
+  .mhc-faq .plat-body .sub { color: var(--text-sub); }
+  .mhc-faq .template {
+    background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--red);
+    border-radius: 8px; padding: 10px 14px; font-size: 14px; line-height: 1.6; margin-top: 6px;
+  }
+  @media (max-width: 560px) {
+    .mhc-faq .plat { grid-template-columns: 1fr; gap: 2px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mhc-faq * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+
+<div class="mhc-faq">
+  <div class="faq-intro">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    <p class="faq-lead">How to move your existing Facebook, Instagram, and Google Business Profile accounts over to your Augusta Lawn Care location.</p>
+  </div>
+
+  <div class="faq-list">
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+        <span class="q-text">Should I convert my old accounts or start new ones?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Convert your existing accounts. Updating the name, logo, and details on the accounts you already have keeps everything you've built. Starting over means rebuilding your audience and reviews from zero.</p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span class="q-text">Will I keep my followers and reviews?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Yes, as long as you update your existing accounts instead of creating new ones. Your followers, posts, and reviews stay in place.</p><p>On Google, creating a second profile can cause duplicate listings and may separate you from your existing reviews.</p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+        <span class="q-text">What do I need before I start?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <div class="chips"><span class="chip"><span class="dot"></span>Logins for all three accounts</span><span class="chip"><span class="dot"></span>Your approved location name</span><span class="chip"><span class="dot"></span>Augusta Lawn Care logo</span><span class="chip"><span class="dot"></span>Facebook cover photo</span><span class="chip"><span class="dot"></span>Bio, website, phone, and email</span><span class="chip"><span class="dot"></span>Announcement post</span></div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+        <span class="q-text">What should my new name be?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Use your approved Augusta Lawn Care location name, such as <strong>Augusta Lawn Care of [City]</strong>, and use it exactly the same way on every platform. Check spelling before you save, since some platforms limit how often you can change it.</p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+        <span class="q-text">How do I change my business name?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <div class="plats"><div class="plat"><div class="plat-name">Facebook</div><div class="plat-body">Edit the Page name in your Page settings. Update the Page username (the @handle in your Page link) there too.</div></div><div class="plat"><div class="plat-name">Instagram</div><div class="plat-body">Go to <strong>Edit profile</strong> to change your Name and Username. <span class="sub">Your name can only be changed twice in 14 days.</span></div></div><div class="plat"><div class="plat-name">Google Business Profile</div><div class="plat-body">Open your existing profile, choose <strong>Edit profile</strong>, and update the business name. <span class="sub">Edit your current profile. Don't create a new one.</span></div></div></div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span class="q-text">How long does a name change take?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <div class="plats"><div class="plat"><div class="plat-name">Facebook</div><div class="plat-body">Facebook may review the change, which can take a few days.</div></div><div class="plat"><div class="plat-name">Instagram</div><div class="plat-body">Updates right away. Your old username is usually held for 14 days before anyone else can claim it.</div></div><div class="plat"><div class="plat-name">Google Business Profile</div><div class="plat-body">Google reviews name changes, usually within a few days. Google may also ask you to verify your business again. Complete it quickly so your profile stays fully visible.</div></div></div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <span class="q-text">What if my name change is rejected?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Platforms are more likely to approve a name change when the new name matches what customers see elsewhere. Update your website, signage, and other listings to the new name first, then submit the change again.</p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>
+        <span class="q-text">Should I delete my old posts?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>No. <strong>Archive</strong> posts that no longer fit the Augusta Lawn Care brand instead of deleting them. Archived posts can be restored, and keeping your history shows customers your track record. Unpin old posts and refresh your Instagram Highlight covers.</p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="q-text">What should my bio say?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Use this template on Facebook and Instagram:</p><div class="template">Augusta Lawn Care of [City]<br>Lawn care, landscaping, and more for [Service Area]<br>[phone number]<br>[email]</div><p style="margin-top:10px">On Google Business Profile, update your description, website, phone, hours, and service area to match.</p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+        <span class="q-text">How do I let customers know about the change?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Publish an announcement post on all three platforms. Pin it to the top of your Facebook Page and Instagram profile for at least 30 days, and share it to your Instagram Stories.</p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+        <span class="q-text">Can the media team post for me after the switch?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Yes. The Augusta Lawn Care media team offers automated social posting on Facebook, Instagram, and Google Business Profile.</p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<script>
+  /* When loaded inside an iframe: remove the default page margin and
+     report the FAQ's height to the parent page so the frame fits exactly. */
+  (function () {
+    var root = document.querySelector('.mhc-faq');
+    if (!root || window.self === window.top) return;
+    document.documentElement.style.margin = '0';
+    document.body.style.margin = '0';
+    function sendHeight() {
+      window.parent.postMessage({ type: 'mhc-transition-faq-height', height: Math.ceil(root.getBoundingClientRect().height) }, '*');
+    }
+    if ('ResizeObserver' in window) new ResizeObserver(sendHeight).observe(root);
+    root.querySelectorAll('details').forEach(function (d) { d.addEventListener('toggle', sendHeight); });
+    window.addEventListener('load', sendHeight);
+    sendHeight();
+  })();
+</script>
