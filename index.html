@@ -1,20 +1,18 @@
 <!-- Augusta Lawn Care | Automated Social Posting FAQ (embeddable) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 
 <style>
   .mhc-faq {
-    /* light mode (default) */
-    --dark:   #222222;
-    --red:    #ef4b2a;
-    --yellow: #ffcd32;
-    --cream:  #f4ebe4;
-    --cream2: #ede0d7;
-    --cream3: #e4d5cb;
-    --muted:  #7a6a62;
-    --light:  #faf6f2;
-    --green:  #1a7a4a;
+    /* dark mode only */
+    --dark:   #f4f0ec;
+    --red:    #ffc614;
+    --cream:  #232019;
+    --cream2: #2b2721;
+    --cream3: #3a352c;
+    --muted:  #a89a8e;
+    --light:  #1a1815;
 
     --bg:        var(--light);
     --surface:   var(--cream2);
@@ -23,37 +21,10 @@
     --text:      var(--dark);
     --text-sub:  var(--muted);
 
-    --serif:  'DM Serif Display', Georgia, serif;
     --sans:   'DM Sans', system-ui, sans-serif;
     --radius: 12px;
     --max: 680px;
-  }
-
-  /* dark mode: follows the host page's data-theme, or the OS when none is set */
-  html[data-theme="dark"] .mhc-faq,
-  .mhc-faq[data-theme="dark"] {
-    --dark:   #f4f0ec;
-    --red:    #ff6a45;
-    --yellow: #ffd766;
-    --cream:  #232019;
-    --cream2: #2b2721;
-    --cream3: #3a352c;
-    --muted:  #a89a8e;
-    --light:  #1a1815;
-    --green:  #3fae7b;
-  }
-  @media (prefers-color-scheme: dark) {
-    html:not([data-theme="light"]) .mhc-faq:not([data-theme="light"]) {
-      --dark:   #f4f0ec;
-      --red:    #ff6a45;
-      --yellow: #ffd766;
-      --cream:  #232019;
-      --cream2: #2b2721;
-      --cream3: #3a352c;
-      --muted:  #a89a8e;
-      --light:  #1a1815;
-      --green:  #3fae7b;
-    }
+    color-scheme: dark;
   }
 
   .mhc-faq, .mhc-faq * { box-sizing: border-box; }
@@ -76,8 +47,9 @@
   /* intro */
   .mhc-faq .faq-intro { margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1.5px solid var(--border); }
   .mhc-faq .faq-title {
-    font-family: var(--serif);
-    font-weight: 400;
+    font-family: var(--sans);
+    font-weight: 600;
+    letter-spacing: -0.01em;
     font-size: clamp(28px, 7vw, 40px);
     line-height: 1.15;
     color: var(--text);
@@ -173,7 +145,7 @@
 
 <div class="mhc-faq">
   <div class="faq-intro">
-    <h2 class="faq-title">Frequently asked questions</h2>
+    <h2 class="faq-title">Frequently Asked Questions</h2>
     <p class="faq-lead">How the media team's automated social posting works for your Augusta Lawn Care location.</p>
   </div>
 
