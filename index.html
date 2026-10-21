@@ -66,7 +66,7 @@
     -webkit-font-smoothing: antialiased;
     max-width: var(--max);
     margin: 0 auto;
-    padding: 36px 20px 48px;
+    padding: 36px 20px 20px;
     border-radius: var(--radius);
   }
 
@@ -308,3 +308,21 @@
 
   </div>
 </div>
+
+<script>
+  /* When loaded inside an iframe: remove the default page margin and
+     report the FAQ's height to the parent page so the frame fits exactly. */
+  (function () {
+    var root = document.querySelector('.mhc-faq');
+    if (!root || window.self === window.top) return;
+    document.documentElement.style.margin = '0';
+    document.body.style.margin = '0';
+    function sendHeight() {
+      window.parent.postMessage({ type: 'mhc-faq-height', height: Math.ceil(root.getBoundingClientRect().height) }, '*');
+    }
+    if ('ResizeObserver' in window) new ResizeObserver(sendHeight).observe(root);
+    root.querySelectorAll('details').forEach(function (d) { d.addEventListener('toggle', sendHeight); });
+    window.addEventListener('load', sendHeight);
+    sendHeight();
+  })();
+</script>
