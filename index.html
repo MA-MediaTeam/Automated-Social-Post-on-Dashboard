@@ -1,0 +1,310 @@
+<!-- Augusta Lawn Care | Automated Social Posting FAQ (embeddable) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+<style>
+  .mhc-faq {
+    /* light mode (default) */
+    --dark:   #222222;
+    --red:    #ef4b2a;
+    --yellow: #ffcd32;
+    --cream:  #f4ebe4;
+    --cream2: #ede0d7;
+    --cream3: #e4d5cb;
+    --muted:  #7a6a62;
+    --light:  #faf6f2;
+    --green:  #1a7a4a;
+
+    --bg:        var(--light);
+    --surface:   var(--cream2);
+    --surface-2: var(--cream);
+    --border:    var(--cream3);
+    --text:      var(--dark);
+    --text-sub:  var(--muted);
+
+    --serif:  'DM Serif Display', Georgia, serif;
+    --sans:   'DM Sans', system-ui, sans-serif;
+    --radius: 12px;
+    --max: 680px;
+  }
+
+  /* dark mode: follows the host page's data-theme, or the OS when none is set */
+  html[data-theme="dark"] .mhc-faq,
+  .mhc-faq[data-theme="dark"] {
+    --dark:   #f4f0ec;
+    --red:    #ff6a45;
+    --yellow: #ffd766;
+    --cream:  #232019;
+    --cream2: #2b2721;
+    --cream3: #3a352c;
+    --muted:  #a89a8e;
+    --light:  #1a1815;
+    --green:  #3fae7b;
+  }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) .mhc-faq:not([data-theme="light"]) {
+      --dark:   #f4f0ec;
+      --red:    #ff6a45;
+      --yellow: #ffd766;
+      --cream:  #232019;
+      --cream2: #2b2721;
+      --cream3: #3a352c;
+      --muted:  #a89a8e;
+      --light:  #1a1815;
+      --green:  #3fae7b;
+    }
+  }
+
+  .mhc-faq, .mhc-faq * { box-sizing: border-box; }
+  .mhc-faq {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.72;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 36px 20px 48px;
+    border-radius: var(--radius);
+  }
+
+  .mhc-faq .icon { color: var(--muted); flex-shrink: 0; }
+  .mhc-faq .icon.accent { color: var(--red); }
+
+  /* intro */
+  .mhc-faq .faq-intro { margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1.5px solid var(--border); }
+  .mhc-faq .faq-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 7vw, 40px);
+    line-height: 1.15;
+    color: var(--text);
+    margin: 0 0 10px;
+  }
+  .mhc-faq .faq-lead {
+    color: var(--text-sub);
+    max-width: 680px;
+    margin: 0;
+  }
+
+  /* accordion items */
+  .mhc-faq .faq-list { display: flex; flex-direction: column; gap: 10px; }
+  .mhc-faq details {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .mhc-faq details:hover { border-color: var(--muted); }
+  .mhc-faq details[open] { border-color: var(--red); }
+  .mhc-faq summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--text);
+    border-radius: var(--radius);
+  }
+  .mhc-faq summary::-webkit-details-marker { display: none; }
+  .mhc-faq summary:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+  .mhc-faq summary .q-icon { color: var(--red); }
+  .mhc-faq summary .q-text { flex: 1; }
+  .mhc-faq summary .chev { transition: transform 0.2s ease; }
+  .mhc-faq details[open] summary .chev { transform: rotate(180deg); color: var(--red); }
+
+  .mhc-faq .answer {
+    padding: 0 16px 16px 48px;
+    color: var(--text);
+  }
+  .mhc-faq .answer p { margin: 0 0 10px; }
+  .mhc-faq .answer p:last-child { margin-bottom: 0; }
+
+  /* chips */
+  .mhc-faq .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .mhc-faq .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  .mhc-faq .chip-more { background: none; border-style: dashed; color: var(--text-sub); }
+  .mhc-faq .chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); }
+
+  /* track cards */
+  .mhc-faq .tracks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 6px;
+  }
+  .mhc-faq .track {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--red);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .mhc-faq .track-name { font-weight: 600; font-size: 14px; line-height: 1.3; margin-bottom: 2px; }
+  .mhc-faq .track-desc { font-size: 13px; line-height: 1.5; color: var(--text-sub); }
+
+  @media (max-width: 480px) {
+    .mhc-faq .answer { padding-left: 16px; }
+    .mhc-faq .tracks { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mhc-faq * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+
+<div class="mhc-faq">
+  <div class="faq-intro">
+    <h2 class="faq-title">Frequently asked questions</h2>
+    <p class="faq-lead">How the media team's automated social posting works for your Augusta Lawn Care location.</p>
+  </div>
+
+  <div class="faq-list">
+
+        <details>
+          <summary>
+            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+            <span class="q-text">What is automated social posting?</span>
+            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="answer">
+            <p>The Augusta Lawn Care media team creates professionally designed posts for your location and publishes them for you. We handle the content and the schedule so you can focus on running your business.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+            <span class="q-text">Where will my posts appear?</span>
+            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="answer">
+            <p>On your location's accounts on these platforms:</p>
+            <div class="chips">
+              <span class="chip"><span class="dot"></span>Facebook</span>
+              <span class="chip"><span class="dot"></span>Instagram</span>
+              <span class="chip"><span class="dot"></span>Google Business Profile</span>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            <span class="q-text">What kind of content do you post?</span>
+            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="answer">
+            <div class="chips">
+              <span class="chip"><span class="dot"></span>Truck and equipment shots</span>
+              <span class="chip"><span class="dot"></span>Crew on the job site</span>
+              <span class="chip"><span class="dot"></span>Before &amp; after photos</span>
+              <span class="chip"><span class="dot"></span>Seasonal lawn care tips</span>
+              <span class="chip"><span class="dot"></span>Service highlights</span>
+              <span class="chip"><span class="dot"></span>5-star review features</span>
+              <span class="chip"><span class="dot"></span>On-brand graphics</span>
+              <span class="chip chip-more">And more!</span>
+            </div>
+            <p style="margin-top:10px">Everything is created to help local customers find you and choose you.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+            <span class="q-text">Do you post videos?</span>
+            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="answer">
+            <p>Yes. Your feed will include a mix of photos and videos.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+            <span class="q-text">How often will you post?</span>
+            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="answer">
+            <p>Three times a week:</p>
+            <div class="chips">
+              <span class="chip"><span class="dot"></span>Monday</span>
+              <span class="chip"><span class="dot"></span>Wednesday</span>
+              <span class="chip"><span class="dot"></span>Friday</span>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+            <span class="q-text">Can I still post on my own accounts?</span>
+            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="answer">
+            <p>Yes. Your accounts stay yours, and you're welcome to keep sharing your own posts, like photos of completed jobs, team updates, or local promotions. Your own posts work alongside ours.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>
+            <span class="q-text">What are content tracks?</span>
+            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="answer">
+            <p>Lawn care looks different depending on where you are, so we offer six climate-based tracks. Each track's content matches the weather and growing season in that region.</p>
+            <div class="tracks">
+              <div class="track"><div class="track-name">Canada</div><div class="track-desc">Short growing seasons, spring cleanups, and snow-season services.</div></div>
+              <div class="track"><div class="track-name">Australia</div><div class="track-desc">Timed to Southern Hemisphere seasons and Australian lawns.</div></div>
+              <div class="track"><div class="track-name">US Desert</div><div class="track-desc">Hot, arid regions. Water-wise landscaping and heat stress.</div></div>
+              <div class="track"><div class="track-name">US Tropical</div><div class="track-desc">Hot, humid regions. Warm-season grasses and storm prep.</div></div>
+              <div class="track"><div class="track-name">US Temperate</div><div class="track-desc">Four distinct seasons, from spring aeration to fall cleanup.</div></div>
+              <div class="track"><div class="track-name">US Cool</div><div class="track-desc">Northern regions. Cool-season grasses and winter prep.</div></div>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="q-text">How is my content track selected?</span>
+            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="answer">
+            <p>The media team assigns your track based on your location.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+            <span class="q-text">What if my track doesn't fit my area?</span>
+            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="answer">
+            <p>Some areas fall between climate zones. If your assigned track doesn't match the conditions you see, contact the media team and we'll review it and switch you to a better fit.</p>
+          </div>
+        </details>
+
+  </div>
+</div>
