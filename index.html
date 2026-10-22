@@ -1,4 +1,4 @@
-<!-- Augusta Lawn Care | Automated Social Posting FAQ (embeddable) -->
+<!-- Augusta Lawn Care | Account Transition and Automated Posting FAQ (embeddable) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -134,8 +134,26 @@
   .mhc-faq .track-desc { font-size: 13px; line-height: 1.5; color: var(--text-sub); }
 
   @media (max-width: 480px) {
-    .mhc-faq .answer { padding-left: 16px; }
     .mhc-faq .tracks { grid-template-columns: 1fr; }
+    .mhc-faq .answer { padding-left: 16px; }
+  }
+
+  /* platform rows */
+  .mhc-faq .plats { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+  .mhc-faq .plat {
+    display: grid; grid-template-columns: 170px 1fr; gap: 12px; align-items: start;
+    background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--red);
+    border-radius: 8px; padding: 10px 12px; font-size: 14px; line-height: 1.55;
+  }
+  .mhc-faq .plat-name { font-weight: 600; }
+  .mhc-faq .plat-body { color: var(--text); }
+  .mhc-faq .plat-body .sub { color: var(--text-sub); }
+  .mhc-faq .template {
+    background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--red);
+    border-radius: 8px; padding: 10px 14px; font-size: 14px; line-height: 1.6; margin-top: 6px;
+  }
+  @media (max-width: 560px) {
+    .mhc-faq .plat { grid-template-columns: 1fr; gap: 2px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -146,106 +164,100 @@
 <div class="mhc-faq">
   <div class="faq-intro">
     <h2 class="faq-title">Frequently Asked Questions</h2>
-    <p class="faq-lead">How the media team's automated social posting works for your Augusta Lawn Care location.</p>
+    <p class="faq-lead">How to move your existing accounts over to your Augusta Lawn Care location, and how automated social posting works.</p>
   </div>
 
   <div class="faq-list">
-
-        <details>
-          <summary>
-            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
-            <span class="q-text">What is automated social posting?</span>
-            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
-          <div class="answer">
-            <p>The Augusta Lawn Care media team creates professionally designed posts for your location and publishes them for you. We handle the content and the schedule so you can focus on running your business.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
-            <span class="q-text">Where will my posts appear?</span>
-            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
-          <div class="answer">
-            <p>On your location's accounts on these platforms:</p>
-            <div class="chips">
-              <span class="chip"><span class="dot"></span>Facebook</span>
-              <span class="chip"><span class="dot"></span>Instagram</span>
-              <span class="chip"><span class="dot"></span>Google Business Profile</span>
-            </div>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-            <span class="q-text">What kind of content do you post?</span>
-            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
-          <div class="answer">
-            <div class="chips">
-              <span class="chip"><span class="dot"></span>Truck and equipment shots</span>
-              <span class="chip"><span class="dot"></span>Crew on the job site</span>
-              <span class="chip"><span class="dot"></span>Before &amp; after photos</span>
-              <span class="chip"><span class="dot"></span>Seasonal lawn care tips</span>
-              <span class="chip"><span class="dot"></span>Service highlights</span>
-              <span class="chip"><span class="dot"></span>5-star review features</span>
-              <span class="chip"><span class="dot"></span>On-brand graphics</span>
-              <span class="chip chip-more">And more!</span>
-            </div>
-            <p style="margin-top:10px">Everything is created to help local customers find you and choose you.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-            <span class="q-text">Do you post videos?</span>
-            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
-          <div class="answer">
-            <p>Yes. Your feed will include a mix of photos and videos.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-            <span class="q-text">How often will you post?</span>
-            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
-          <div class="answer">
-            <p>Three times a week:</p>
-            <div class="chips">
-              <span class="chip"><span class="dot"></span>Monday</span>
-              <span class="chip"><span class="dot"></span>Wednesday</span>
-              <span class="chip"><span class="dot"></span>Friday</span>
-            </div>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
-            <span class="q-text">Can I still post on my own accounts?</span>
-            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
-          <div class="answer">
-            <p>Yes. Your accounts stay yours, and you're welcome to keep sharing your own posts, like photos of completed jobs, team updates, or local promotions. Your own posts work alongside ours.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>
-            <span class="q-text">What are content tracks?</span>
-            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
-          <div class="answer">
-            <p>Lawn care looks different depending on where you are, so we offer six climate-based tracks. Each track's content matches the weather and growing season in that region.</p>
-            <div class="tracks">
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+        <span class="q-text">Should I convert my old accounts or start new ones?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Convert your existing accounts. Updating the name, logo, and details on the accounts you already have keeps your followers, posts, and reviews. On Google, creating a second profile can cause duplicate listings and may separate you from your existing reviews.</p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+        <span class="q-text">What do I need before I start?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <div class="chips"><span class="chip"><span class="dot"></span>Logins for all three accounts</span><span class="chip"><span class="dot"></span>Your approved location name</span><span class="chip"><span class="dot"></span>Augusta Lawn Care logo</span><span class="chip"><span class="dot"></span>Facebook cover photo</span><span class="chip"><span class="dot"></span>Bio, website, phone, and email</span><span class="chip"><span class="dot"></span>Announcement post</span></div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+        <span class="q-text">How do I change my business name?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Use your approved location name, such as <strong>Augusta Lawn Care of [City]</strong>, exactly the same way on every platform. Check spelling before you save.</p><div class="plats"><div class="plat"><div class="plat-name">Facebook</div><div class="plat-body">Edit the Page name and username in your Page settings. <span class="sub">Facebook may review the change, which can take a few days.</span></div></div><div class="plat"><div class="plat-name">Instagram</div><div class="plat-body">Go to <strong>Edit profile</strong> to change your Name and Username. <span class="sub">Updates right away. Your name can only be changed twice in 14 days.</span></div></div><div class="plat"><div class="plat-name">Google Business Profile</div><div class="plat-body">Edit the name on your existing profile. Don't create a new one. <span class="sub">Google reviews changes within a few days and may ask you to verify your business again.</span></div></div></div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <span class="q-text">What if my name change is rejected?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Approval is more likely when the new name matches what customers see elsewhere. Update your website, signage, and other listings first, then submit the change again.</p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="q-text">How should I update my profiles?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Add your new logo and use this bio on Facebook and Instagram:</p><div class="template">Augusta Lawn Care of [City]<br>Lawn care, landscaping, and more for [Service Area]<br>[phone number]<br>[email]</div><p style="margin-top:10px">On Google Business Profile, update your description, website, phone, hours, and service area to match. <strong>Archive</strong> old posts that don't fit the brand instead of deleting them.</p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+        <span class="q-text">How do I let customers know about the change?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Publish an announcement post on all three platforms. Pin it to the top of your Facebook Page and Instagram profile for at least 30 days, and share it to your Instagram Stories.</p>
+      </div>
+    </details>
+   <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+        <span class="q-text">What do you post?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>A mix of photos and videos, including:</p><div class="chips"><span class="chip"><span class="dot"></span>Truck and equipment shots</span><span class="chip"><span class="dot"></span>Crew on the job site</span><span class="chip"><span class="dot"></span>Before &amp; after photos</span><span class="chip"><span class="dot"></span>Seasonal lawn care tips</span><span class="chip"><span class="dot"></span>Service highlights</span><span class="chip"><span class="dot"></span>5-star review features</span><span class="chip"><span class="dot"></span>On-brand graphics</span><span class="chip chip-more">And more!</span></div>
+        <p style="margin-top:12px">We post three times a week:</p><div class="chips"><span class="chip"><span class="dot"></span>Monday</span><span class="chip"><span class="dot"></span>Wednesday</span><span class="chip"><span class="dot"></span>Friday</span></div>
+        <p style="margin-top:12px">On these platforms:</p><div class="chips"><span class="chip"><span class="dot"></span>Facebook</span><span class="chip"><span class="dot"></span>Instagram</span><span class="chip"><span class="dot"></span>Google Business Profile</span></div>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+        <span class="q-text">Can I still post on my own accounts?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Yes. Your accounts stay yours, and your own posts, like completed jobs, team updates, or local promotions, work alongside ours.</p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>
+        <span class="q-text">What are content tracks?</span>
+        <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="answer">
+        <p>Six climate-based tracks that match your content to the weather and growing season in your region.</p><div class="tracks">
               <div class="track"><div class="track-name">Canada</div><div class="track-desc">Short growing seasons, spring cleanups, and snow-season services.</div></div>
               <div class="track"><div class="track-name">Australia</div><div class="track-desc">Timed to Southern Hemisphere seasons and Australian lawns.</div></div>
               <div class="track"><div class="track-name">US Desert</div><div class="track-desc">Hot, arid regions. Water-wise landscaping and heat stress.</div></div>
@@ -253,31 +265,9 @@
               <div class="track"><div class="track-name">US Temperate</div><div class="track-desc">Four distinct seasons, from spring aeration to fall cleanup.</div></div>
               <div class="track"><div class="track-name">US Cool</div><div class="track-desc">Northern regions. Cool-season grasses and winter prep.</div></div>
             </div>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-            <span class="q-text">How is my content track selected?</span>
-            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
-          <div class="answer">
-            <p>The media team assigns your track based on your location.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <svg class="icon q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
-            <span class="q-text">What if my track doesn't fit my area?</span>
-            <svg class="icon chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
-          <div class="answer">
-            <p>Some areas fall between climate zones. If your assigned track doesn't match the conditions you see, contact the media team and we'll review it and switch you to a better fit.</p>
-          </div>
-        </details>
-
+          <p style="margin-top:10px">The media team assigns your track based on your location. If it doesn't fit your area, contact the media team and we'll switch you.</p>
+      </div>
+    </details>
   </div>
 </div>
 
